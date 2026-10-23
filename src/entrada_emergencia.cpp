@@ -52,9 +52,9 @@ void emergenciaInit() {
 }
 
 bool emergenciaConsumirEvento(uint32_t& totalPulsaciones) {
-    const uint32_t ahora = XTHAL_GET_CCOUNT();
-
     portENTER_CRITICAL(&mux);
+
+    const uint32_t ahora = XTHAL_GET_CCOUNT();
 
     const bool hayEvento = eventoPendiente;
     eventoPendiente = false;
