@@ -77,8 +77,7 @@ void loop() {
     } else {
         evento = leerComando();
 
-        if (evento == Evento::NONE &&
-            fsmEstadoActual() == Estado::RUNNING &&
+        if (fsmEstadoActual() == Estado::RUNNING &&
             static_cast<uint32_t>(millis() - inicioMarcha)
                 >= TIEMPO_MARCHA_MS) {
             evento = Evento::TIMEOUT;
