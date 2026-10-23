@@ -60,3 +60,14 @@ void motorForward(uint16_t duty) {
     escribirPWM(CHANNEL_B, 0);
     escribirPWM(CHANNEL_A, duty);
 }
+void motorBrake() {
+    // Frenado segun el ejemplo de motores de CRCibernetica.
+    escribirPWM(CHANNEL_A, DUTY_MAX);
+    escribirPWM(CHANNEL_B, DUTY_MAX);
+}
+
+void motorCoast() {
+    // Parada libre segun el ejemplo de CRCibernetica.
+    escribirPWM(CHANNEL_A, 0);
+    escribirPWM(CHANNEL_B, 0);
+}
